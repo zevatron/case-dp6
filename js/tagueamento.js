@@ -28,20 +28,23 @@ function eventoSobre(acao) {
 }
 
 function load() {
+    
+    var path = location.host.startsWith('localhost') ? '' : '/case-dp6';
+
     var contato = document.getElementsByClassName("menu-lista-contato");
     contato[0].addEventListener("click",eventoContato,false);
 
     var download = document.getElementsByClassName("menu-lista-download");
     download[0].addEventListener("click",eventoDownload,false);
 
-    if(location.pathname == "/analise.html" ) {
+    if(location.pathname == path +"/analise.html" ) {
         var cards = document.getElementsByClassName("card card-montadoras");
         for (const card of cards) {
             card.addEventListener("click",function(){eventoAnaliseCard(card.dataset.name)},false);       
         }
     }
 
-    if(location.pathname == "/sobre.html" ) {
+    if(location.pathname == path + "/sobre.html" ) {
         var contato = document.getElementsByClassName("contato");
         inputs = contato[0].getElementsByTagName("input");
         for (const input of inputs) {
