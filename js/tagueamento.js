@@ -45,11 +45,9 @@ function load() {
         var contato = document.getElementsByClassName("contato");
         inputs = contato[0].getElementsByTagName("input");
         for (const input of inputs) {
-            input.addEventListener('change',function(){eventoSobre(acao = input.id)},false);
+            input.addEventListener("change",function(){eventoSobre(acao = input.id)},false);
         }
     }
-
-    // var mensagemEnviado = jQuery('.lightbox');
 
 
 
